@@ -1,5 +1,7 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import (
+TemplateView, ListView, CreateView, UpdateView
+)
 from .models import CardModel
 
 
@@ -14,4 +16,7 @@ class CreateCardView(CreateView):
     model = CardModel
     template_name = 'cards/create_card.html'
     fields = ['question', 'answer', 'box']
+    success_url = reverse_lazy('home')
+
+class UpdatecardView(CreateCardView, UpdateView):
     success_url = reverse_lazy('home')

@@ -1,8 +1,13 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
 
+{% if card %}
+<h2>Edit card</h2>
+{% else %}
 <h2>Add card</h2>
+{% endif %}
+
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -10,5 +15,4 @@
     <button type="submit">Add card</button>
 </form>
 
-{% endblock content %} 
-
+{% endblock content %}
