@@ -3,4 +3,13 @@
 {% block content %}
 <h1>Home Page</h1>
 
+{% for card in card_list %}
+<div class="">
+    <h3>{{ card.box }} Box</h3>
+
+    <p>{{ card }}</p>
+</div>
+
+{% endfor %}
+
 {% endblock content %}
