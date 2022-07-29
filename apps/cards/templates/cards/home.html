@@ -9,8 +9,8 @@
     {% ifchanged %}
     <h3>{{ card.box | ordinal }} Box</h3>
     {% endifchanged %}
-    <p>{{ card }}</p>
-    <p>{{ card.date_created | naturaltime }}</p>
+
+    {% include 'cards/card.html' %}
 </div>
 
 {% endfor %}
