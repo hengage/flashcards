@@ -1,7 +1,8 @@
 from django.urls import path
 
-from .views import HomePageView
+from .views import HomePageView, CreateCardView
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='home')
+    path('', HomePageView.as_view(), name='home'),
+    path('new', CreateCardView.as_view(), name='create-card')
 ]
