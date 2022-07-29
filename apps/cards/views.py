@@ -5,12 +5,13 @@ from .models import CardModel
 
 
 class HomePageView( ListView):
-    template_name = 'home.html'
+    template_name = 'cards/home.html'
     model = CardModel
     queryset = CardModel.objects.all()
     context_object_name = 'card_list'
 
 class CreateCardView(CreateView):
     model = CardModel
+    template_name = 'cards/create_card.html'
     fields = ['question', 'answer', 'box']
     success_url = reverse_lazy('home')
