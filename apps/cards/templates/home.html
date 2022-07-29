@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block content %}
 <h1>Home Page</h1>
 
 {% for card in card_list %}
 <div class="">
-    <h3>{{ card.box }} Box</h3>
-
+    {% ifchanged %}
+    <h3>{{ card.box | ordinal }} Box</h3>
+    {% endifchanged %}
     <p>{{ card }}</p>
+    <p>{{ card.date_created | naturaltime }}</p>
 </div>
 
 {% endfor %}
