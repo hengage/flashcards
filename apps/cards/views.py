@@ -17,6 +17,7 @@ class CreateCardView(CreateView):
     template_name = 'cards/create_card.html'
     fields = ['question', 'answer', 'box']
     success_url = reverse_lazy('home')
+    context_object_name = 'card'
 
 class UpdatecardView(CreateCardView, UpdateView):
     success_url = reverse_lazy('home')

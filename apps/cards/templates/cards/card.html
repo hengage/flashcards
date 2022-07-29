@@ -4,4 +4,8 @@
 {{ card.question }}
 {{ card.answer }}
 
+<div class="">
+    <a href="{% url 'update-card' card.id %}">Edit</a>
+</div>
+
 {%  endblock content %}
