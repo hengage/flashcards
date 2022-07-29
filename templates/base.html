@@ -11,6 +11,10 @@
 <body>
     <h2><a href="{% url 'home' %}">FlashCards</a></h2>
 
+    <div class="">
+        {% include 'navigation.html' %}
+    </div>
+
     {% block content %}
 
     {% endblock content %}
