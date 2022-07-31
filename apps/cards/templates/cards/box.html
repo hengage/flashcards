@@ -1,7 +1,9 @@
 {% extends 'base.html' %} 
+{% load humanize %}
 
 {% block content %}
-    {{ box_number }} Box
+    {{ box_number | ordinal }} Box
+    {{ card_list | length }} card{{ card_list | pluralize }} in this box
 
     {% for card in card_list %}
         {{ card }}
