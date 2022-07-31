@@ -21,3 +21,11 @@ class CreateCardView(CreateView):
 
 class UpdatecardView(CreateCardView, UpdateView):
     success_url = reverse_lazy('home')
+
+class BoxView(ListView):
+    template_name: str = 'cards/box.html'
+    context_object_name = 'card_list'
+
+    def get_queryset(self):
+        return CardModel.objects.filter(box=self.kwargs['box_num'])
+    
