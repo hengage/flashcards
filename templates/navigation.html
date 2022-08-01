@@ -1,5 +1,9 @@
+{% load cards_tags %} 
+
+
 <a href="{% url 'create-card' %}">➕ Create card</a>
 
 <a href="">🗂️ My cards</a>
 
+{% boxes_as_links %}
 {% include 'cards/_box_links.html' %}

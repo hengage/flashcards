@@ -2,9 +2,9 @@ from django import template
 
 from cards.models import BOXES, CardModel
 
-register = template.library
+register = template.Library()
 
-@register.inclusion_tag('cards/box_links.html')
+@register.inclusion_tag('cards/_box_links.html')
 def boxes_as_links():
     boxes = []
     for box_num in BOXES:
