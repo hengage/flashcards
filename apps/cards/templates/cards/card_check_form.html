@@ -1,0 +1,10 @@
+<form method="post">
+{% csrf_token %} 
+<input type="hidden" name="card_id" value="{{ card.id }}">
+    <input type="hidden" name="solved" value="{{ solved }}">
+    {% if solved %}
+        <button type="submit">✅ Correct</button>
+    {% else %}
+        <button type="submit">❌ Wrong</button>
+    {% endif %}
+</form>
