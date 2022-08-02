@@ -2,7 +2,16 @@
 {% block content %}
 
 {{ card.question }}
-{{ card.answer }}
+
+{% if random_card %} 
+
+    <details>
+        <summary>Reveal Answer</summary>
+    {{ card.answer }}
+{% else %} 
+    {{ card.answer }}
+    </details>
+{% endif %}
 
 <div class="">
     <a href="{% url 'update-card' card.id %}">✍️ </a>
