@@ -2,6 +2,8 @@ from django.urls import reverse_lazy
 from django.views.generic import (
 TemplateView, ListView, CreateView, UpdateView
 )
+import random
+
 from .models import CardModel
 
 
@@ -32,4 +34,6 @@ class BoxView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['box_number'] = self.kwargs['box_num']
+        if self.object_list:
+            context["check_card"] = random.choice(self.object_list)
         return context

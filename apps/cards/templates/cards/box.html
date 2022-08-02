@@ -9,4 +9,8 @@
         {{ card }}
     {% endfor %}
 
+    {% if check_card %}
+    {% include "cards/card.html" with card=check_card %}
+{% endif %}
+
 {% endblock content %}
